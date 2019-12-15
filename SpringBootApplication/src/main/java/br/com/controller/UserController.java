@@ -1,5 +1,7 @@
 package br.com.controller;
 
+import br.com.model.request.UserDetailRequestModel;
+import br.com.model.response.UserRest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,8 +14,8 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser() {
-        return "update user was called";
+    public UserRest createUser(@RequestBody UserDetailRequestModel userDetail) {
+        return null;
     }
 
     @PostMapping
