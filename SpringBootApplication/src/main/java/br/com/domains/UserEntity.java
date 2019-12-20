@@ -6,32 +6,33 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity(name = "users")
+@Entity(name = "Usuarios")
 public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
+    //@GeneratedValue
     private Long id;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String userId;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String firstName;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String lastName;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = true, length = 50)
     private String email;
-    @Column(nullable = false)
+
+    @Column(nullable = true)
     private String encryptedPassword;
 
     private String emailVerificationToken;
 
-    @Column(nullable = false, columnDefinition = "boolean default false")
+    @Column(nullable = true, columnDefinition = "boolean default false")
     private Boolean emailVerificationStatus = false;
 
     public Long getId() {
@@ -96,5 +97,8 @@ public class UserEntity implements Serializable {
 
     public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
         this.emailVerificationStatus = emailVerificationStatus;
+    }
+
+    public UserEntity() {
     }
 }

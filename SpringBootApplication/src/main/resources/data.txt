@@ -1,0 +1,11 @@
+create table usuarios (
+       id bigint not null,
+        email varchar(50),
+        email_verification_status boolean default false,
+        email_verification_token varchar(255),
+        encrypted_password varchar(255),
+        first_name varchar(50),
+        last_name varchar(50),
+        user_id varchar(50),
+        primary key (id)
+    )
