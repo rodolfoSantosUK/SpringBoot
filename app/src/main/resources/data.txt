@@ -1,0 +1,17 @@
+create table usuarios (
+       id int  not null,
+        email varchar(50),
+        email_verification_status boolean default false,
+        email_verification_token varchar(255),
+        encrypted_password varchar(255),
+        first_name varchar(50),
+        last_name varchar(50),
+        user_id varchar(50),
+        primary key (id)
+    )
+
+     insert into usuarios (id, email, email_verification_status, email_verification_token, encrypted_password, first_name, last_name, user_id
+       )                 values (1,'rodolfo.gouveia2002@gmail.com',false,'teste', '#@#$%re','Rodolfo', 'Santos','1');
+
+
+  select *  from usuarios;

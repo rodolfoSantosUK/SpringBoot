@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping(value = "/users")
 public class UserController {
 
     @GetMapping
@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     public UserService userService;
 
-    @PostMapping
+    @PostMapping(value = "/createUser")
     public UserRest createUser(@RequestBody UserDetailRequestModel userDetails) {
 
         UserRest returnValue  = new UserRest();
@@ -33,10 +33,7 @@ public class UserController {
         return returnValue;
     }
 
-    @PostMapping
-    public String updateUser() {
-        return "update user was called";
-    }
+
 
     @DeleteMapping
     public String deleteUser() {
